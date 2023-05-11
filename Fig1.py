@@ -35,7 +35,6 @@ I.s=np.zeros(N)
 T=4000
 T=400*N
 T=20001
-#T=200
 T0=100000
 S=np.zeros((N,T))
 A=np.zeros(T)
