@@ -14,6 +14,7 @@ plt.rc('text', usetex=True)
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
 plt.rc('legend', **{'fontsize': 20})
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 
 
 
@@ -89,7 +90,7 @@ plt.plot(alphas,dQ)
 
 plt.figure()
 plt.plot(alphas,sig,'k')
-plt.ylabel(r'$\sigma_u/N$',fontsize=18, rotation=0, labelpad=20)
+plt.ylabel(r'$\dfrac{1}{N}\left[\sigma_{u}\right]_{\mathbf{J}}$',labelpad=20,rotation=0)
 plt.xlabel(r'$\Delta H$',fontsize=18)
 plt.axis([0,np.max(alphas),0,np.max(sig)*1.05])
 plt.savefig('img/Fig6e.pdf',bbox_inches='tight')

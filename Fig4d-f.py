@@ -17,6 +17,7 @@ plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
 plt.rc('legend', **{'fontsize': 15})
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 
 
 H0=0.0
@@ -134,7 +135,7 @@ betas = np.linspace(0, 4, B)
 
 #np.savez('analytical_a_DeltaJ'+str(Js)+'.npz',M=M,Q=Q, sig=sig,DF=DF)
 
-data = np.load('analytical_a_DeltaJ'+str(Js)+'.npz')
+data = np.load('data/analytical_a_DeltaJ'+str(Js)+'.npz')
 M=data['M']
 Q=data['Q']
 sig=data['sig']
@@ -158,7 +159,7 @@ sigmas=[]
 
 for size in sizes:
 
-    filename = 'data_a_-gamma1-'+str(H0)+'-gamma2-'+str(Js)+'-s-'+str(size)+'-R-'+str(R)+'-Tr-'+str(Tr)+'.npz'
+    filename = 'data/data_a_-gamma1-'+str(H0)+'-gamma2-'+str(Js)+'-s-'+str(size)+'-R-'+str(R)+'-Tr-'+str(Tr)+'.npz'
 #    filename = 'data-gamma1-'+str(H0)+'-gamma2-'+str(Js)+'-s-'+str(size)+'-R-'+str(R)+'.npz'
     data=np.load(filename)
     ms+=[data['m']]

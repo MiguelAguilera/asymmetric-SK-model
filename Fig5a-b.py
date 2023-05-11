@@ -6,7 +6,7 @@ plt.rc('text', usetex=True)
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
 plt.rc('legend', **{'fontsize': 20})
-
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 
 
 size = 1000     # Network size
@@ -84,50 +84,6 @@ plt.ylabel(r'$\Delta J$', rotation=0, labelpad=20)
 plt.title(r'$q$', pad=8)
 plt.savefig('img/q1.pdf', bbox_inches='tight')
 
-
-#plt.figure()
-#plt.axis([0,4,0,1])
-#plt.imshow(S,cmap='inferno_r',interpolation='None',aspect='auto',origin='lower',extent=[0,4,0,1],vmin=0)
-#plt.colorbar()
-#plt.plot(beta_c[beta_c<beta_max/2], Js_list[beta_c<beta_max/2],'--',color='0.5',lw=2.5)
-#plt.plot([0,4], np.ones(2)*0.795019386059721,':',color='0',lw=2)
-#plt.xlabel(r'$\beta$')
-#plt.ylabel(r'$\Delta J$', rotation=0, labelpad=20)
-#plt.title(r'$S_{u|u-1}$')
-##plt.savefig('img/Scond.pdf', bbox_inches='tight')
-
-
-#plt.figure()
-#plt.axis([0,4,0,1])
-#plt.imshow(S_r,cmap='inferno_r',interpolation='None',aspect='auto',origin='lower',extent=[0,4,0,1],vmin=0)
-#plt.colorbar()
-#plt.plot(beta_c[beta_c<beta_max/2], Js_list[beta_c<beta_max/2],'--',color='0.5',lw=2.5)
-#plt.plot([0,4], np.ones(2)*0.795019386059721,':',color='0',lw=2)
-#plt.xlabel(r'$\beta$')
-#plt.ylabel(r'$\Delta J$', rotation=0, labelpad=20)
-#plt.title(r'$S_{u|u-1}^r$')
-##plt.savefig('img/Scond_r.pdf', bbox_inches='tight')
-
-#plt.figure()
-#plt.axis([0,4,0,1])
-#plt.imshow(sig,cmap='inferno_r',interpolation='None',aspect='auto',origin='lower',extent=[0,4,0,1],vmin=0)
-#plt.colorbar()
-#plt.plot(beta_c[beta_c<beta_max/2], Js_list[beta_c<beta_max/2],'--',color='0.5',lw=2.5)
-#plt.plot([0,4], np.ones(2)*0.795019386059721,':',color='0',lw=2)
-
-#plt.xlabel(r'$\beta$')
-#plt.ylabel(r'$\Delta J$', rotation=0, labelpad=20)
-#plt.title(r'$\langle \sigma_{u}^\mathrm{bath}\rangle$')
-##plt.savefig('img/sigma_bath.pdf', bbox_inches='tight')
-
-
-#plt.figure()
-#plt.axis([0,4,0,1])
-#plt.imshow(sigb,cmap='inferno_r',interpolation='None',aspect='auto',origin='lower',extent=[0,4,0,1],vmin=0)
-#plt.colorbar()
-#plt.plot(beta_c[beta_c<beta_max/2], Js_list[beta_c<beta_max/2])
-#plt.xlabel(r'$\beta$')
-#plt.ylabel(r'$J_{\Delta}$', rotation=0)
 
 
 plt.show()

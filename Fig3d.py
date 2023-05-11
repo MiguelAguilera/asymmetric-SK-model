@@ -20,6 +20,7 @@ plt.rc('text', usetex=True)
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
 plt.rc('legend', **{'fontsize': 14})
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 
 
 
@@ -55,7 +56,7 @@ for i in range(Nv):
 
 maxsig=0
 for ind,v in enumerate(vS):
-    H0=v
+    Js=v
     for ib in range(B):
         beta=round(betas[ib], 3)
         if beta==0:
@@ -113,12 +114,12 @@ for ind,v in enumerate(vS):
         print(ind,v,beta, M[ib], Q[ib], sig[ib] , S[ib],S_r[ib])
 
     maxsig=max(maxsig,np.max(sig))
-    print(colors[ind])
-    plt.plot(betas,sig,color=colors[ind],label=r'$\Delta J = '+str(v)+'$')
-plt.ylabel(r'$\sigma_{u}/N$',labelpad=20,rotation=0)
+    plt.plot(betas,sig,color='k',label=r'$\Delta J = '+str(v)+'$')
+#    plt.plot(betas,sig,color=colors[ind],label=r'$\Delta J = '+str(v)+'$')
+plt.ylabel(r'$\dfrac{1}{N}\left[\sigma_{u}\right]_{\mathbf{J}}$',labelpad=20,rotation=0)
 plt.xlabel(r'$\beta$')
 plt.axis([np.min(betas),np.max(betas),0,maxsig])
-plt.legend()
+#plt.legend()
 plt.savefig('img/Fig3d.pdf', bbox_inches='tight')
 plt.show()
         

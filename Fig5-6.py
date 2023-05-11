@@ -6,6 +6,7 @@ plt.rc('text', usetex=True)
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
 plt.rc('legend', **{'fontsize': 20})
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 
 
 
@@ -52,12 +53,11 @@ for ii in range(interval):
             
         error = beta_max-beta_min
         
-        print(beta, f, error)
-
+    print(ii)
     beta_c[ii] = beta
 
 
-M, Q, sig, S, S_r, sigb= np.load('data-heatmap-Js-'+str(Js)+'.npy')
+M, Q, sig, S, S_r, sigb= np.load('data/data-heatmap-Js-'+str(Js)+'.npy')
 
 plt.rc('text', usetex=True)
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
@@ -118,7 +118,7 @@ plt.colorbar()
 #plt.plot([0,4], np.ones(2),':',color='0',lw=2)
 plt.xlabel(r'$\beta$')
 plt.ylabel(r'$\Delta H$', rotation=0, labelpad=20)
-plt.title(r'$ \sigma_{u}/N$', pad=8)
+plt.title(r'$\dfrac{1}{N}\left[\sigma_{u}\right]_{\mathbf{J}}$', pad=8)
 plt.savefig('img/sigma_bath2.pdf', bbox_inches='tight')
 #plt.figure()
 #plt.axis([0,4,0,2])

@@ -6,6 +6,7 @@ plt.rc('text', usetex=True)
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
 plt.rc('legend', **{'fontsize': 20})
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 
 
 def bool2int(x):  # Transform bool array into positive integer
@@ -41,7 +42,7 @@ A=np.zeros(T)
 for t in range(T0):
     I.GlauberStep()
 for t in range(T):
-    I.GlauberStep(np.random.randint(N))
+    I.GlauberStep()
     S[:,t]=I.s
     A[t] = bool2int((I.s+1)//2)
     

@@ -17,6 +17,7 @@ plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
 plt.rc('legend', **{'fontsize': 15})
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
 
 
 
