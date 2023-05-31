@@ -11,11 +11,6 @@ from matplotlib import pyplot as plt
 from matplotlib import cm
 from SK import *
 
-def nsf(num, n=4):
-    """n-Significant Figures"""
-    numstr = ("{0:.%ie}" % (n - 1)).format(num)
-    return float(numstr)
-
 plt.rc('text', usetex=True)
 font = {'size': 18, 'family':'serif', 'serif': ['latin modern roman']}
 plt.rc('font', **font)
